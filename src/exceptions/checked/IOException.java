@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.checked;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
