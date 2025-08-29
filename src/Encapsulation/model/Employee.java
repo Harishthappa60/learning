@@ -23,6 +23,7 @@ public class Employee {
     }else {
             System.out.println("Less than required age limit");
         }
+
     }
 
     public String getDept() {

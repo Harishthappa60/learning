@@ -1,14 +1,23 @@
 package exceptions;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class IOException {
+public class IOException extends Throwable {
     public static void main(String[] args) {
-        try {
-            FileReader fileReader=new FileReader("employee.txt");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    String fileName="C:/Workspace/learning/simple.txt";
+    try {
+
+    FileReader fr=new FileReader(fileName);
+        BufferedReader br=new BufferedReader(fr);
+    String line;
+    while ((line=br.readLine()) !=null){
+        System.out.println(line);
+    }
+    br.close();
+    fr.close();
+    } catch (java.io.IOException e) {
+        throw new RuntimeException("Error reading file"+e.getMessage());
+    }
     }
 }
